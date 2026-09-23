@@ -4,177 +4,76 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#08090f" />
-  <title>สมองมึงคิดเหมือนกูไหม?</title>
+  <title>สมองมึงคิดเหมือนกูไหม? — V4</title>
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-  <div class="noise"></div>
-  <div class="bg-orb orb1"></div>
-  <div class="bg-orb orb2"></div>
-
+  <div class="noise"></div><div class="bg-orb orb1"></div><div class="bg-orb orb2"></div>
   <main class="app">
     <header class="topbar">
-      <div>
-        <div class="brand"><span>🧠</span> สมองมึงคิดเหมือนกูไหม?</div>
-        <div class="subtitle">เกม 2 คนที่ไม่ได้ถามเรื่องเพื่อนอย่างเดียว — เดาให้ตรงกันจากคำถามทั่วๆ ไป</div>
-      </div>
-      <div class="top-status">
-        <div class="connection"><span id="connectionDot" class="connection-dot"></span><span id="connectionText">กำลังเชื่อมต่อ...</span></div>
-        <div id="roomBadge" class="room-badge hidden">ROOM <b id="roomCodeText">----</b></div>
-      </div>
+      <div><div class="brand"><span>🧠</span> สมองมึงคิดเหมือนกูไหม?</div><div class="subtitle">2 คน • 15 รอบ • คำถามสุ่ม 400 ข้อ • ไม่ต้องรู้จักกันก็เล่นได้</div></div>
+      <div class="top-status"><div class="connection"><span id="connectionDot" class="connection-dot"></span><span id="connectionText">กำลังเชื่อมต่อ...</span></div><div id="roomBadge" class="room-badge hidden">ROOM <b id="roomCodeText">----</b></div></div>
     </header>
 
     <section id="screenHome" class="screen">
       <div class="hero card">
-        <div class="hero-badge">⚡ PUBLIC QUESTION MODE</div>
-        <div class="hero-icon">🧠</div>
-        <h1>คิดให้ตรงกัน<br><span>โดยไม่รู้คำตอบของอีกคน</span></h1>
-        <p>ทั้งคู่เห็นคำถามเดียวกัน แล้วเลือกคำตอบที่คิดว่าอีกคนจะเลือก<br>คำถามเป็นเรื่องกิน เที่ยว เกม เทคโนโลยี ชีวิตประจำวัน ความรู้ และเรื่องปั่นๆ</p>
-
-        <div class="name-row">
+        <div class="hero-badge">🔥 V4 • MIND SYNC</div><div class="hero-icon">🧠</div>
+        <h1>มึงจะเลือกเหมือนกูไหม?<br><span>เดาใจอีกคน แล้วดูว่าตรงกันแค่ไหน</span></h1>
+        <p>ทุกคนเห็นคำถามเดียวกัน แต่ต้องเลือกคำตอบที่คิดว่า “อีกคน” จะเลือก<br>คำถามครอบคลุมชีวิตประจำวัน เกม อาหาร เทคโนโลยี ท่องเที่ยว เรื่องปั่นๆ และสถานการณ์ต่างๆ</p>
+        <div class="profile-box">
           <input id="nameInput" maxlength="18" placeholder="ชื่อมึง เช่น Flok" autocomplete="nickname" />
+          <div class="avatar-label">เลือกตัวแทนของมึง</div>
+          <div id="avatarPicker" class="avatar-picker"></div>
         </div>
-
-        <div class="home-actions">
-          <button id="createBtn" class="primary">สร้างห้อง</button>
-          <button id="showJoinBtn" class="secondary">เข้าห้องเพื่อน</button>
-        </div>
-
-        <div id="joinBox" class="join-box hidden">
-          <input id="codeInput" maxlength="4" placeholder="รหัส 4 ตัว" autocomplete="off" />
-          <button id="joinBtn" class="primary">เข้าห้อง</button>
-        </div>
-
-        <div class="feature-grid">
-          <div><b>15</b><span>รอบ / เกม</span></div>
-          <div><b>200</b><span>คำถาม</span></div>
-          <div><b>0</b><span>คำถามซ้ำในแมตช์</span></div>
-          <div><b>15s</b><span>ต่อรอบ</span></div>
-        </div>
-
-        <div class="howto">
-          <span>👥 2 คน</span>
-          <span>🌐 คนละบ้านก็เล่นได้</span>
-          <span>⚡ Real-time</span>
-          <span>📱 มือถือก็เล่นได้</span>
-        </div>
+        <div class="home-actions"><button id="createBtn" class="primary">สร้างห้อง</button><button id="showJoinBtn" class="secondary">เข้าห้องเพื่อน</button></div>
+        <div id="joinBox" class="join-box hidden"><input id="codeInput" maxlength="4" placeholder="รหัส 4 ตัว" autocomplete="off" /><button id="joinBtn" class="primary">เข้าห้อง</button></div>
+        <div class="feature-grid"><div><b>400</b><span>คำถาม</span></div><div><b>15</b><span>รอบ / เกม</span></div><div><b>45</b><span>กันคำถามวนเกมถัดไป</span></div><div><b>15s</b><span>ต่อรอบ</span></div></div>
+        <div class="howto"><span>👥 2 คน</span><span>🌐 คนละบ้าน</span><span>⚡ Real-time</span><span>🔁 Rematch</span><span>📱 มือถือ</span></div>
       </div>
-
-      <div class="info-strip">
-        <div><strong>🎯 เป้าหมาย</strong><span>ตอบให้ตรงกันให้มากที่สุด</span></div>
-        <div><strong>🔥 คะแนน</strong><span>100 แต้ม + โบนัสสตรีค</span></div>
-        <div><strong>🧠 คำถาม</strong><span>สุ่ม 15 จาก 200 แบบไม่ซ้ำ</span></div>
-      </div>
+      <div class="info-strip"><div><strong>🎯 เป้าหมาย</strong><span>ทำให้ตรงกันให้มากที่สุด</span></div><div><strong>🔥 Streak</strong><span>ตรงติดกันยิ่งสะใจ</span></div><div><strong>🧠 คะแนน</strong><span>ไม่มีคะแนนแข่ง — วัด Sync กันตรงๆ</span></div></div>
     </section>
 
     <section id="screenLobby" class="screen hidden">
       <div class="card lobby">
-        <div class="eyebrow">ROOM READY</div>
-        <div class="room-title">รหัสห้อง</div>
-        <div id="bigRoomCode" class="big-code">----</div>
+        <div class="eyebrow">ROOM READY</div><div class="room-title">รหัสห้อง</div><div id="bigRoomCode" class="big-code">----</div>
         <button id="copyBtn" class="copy-btn">📋 คัดลอกรหัส</button>
-        <p id="lobbyRuleText" class="muted">15 รอบ • คำถามไม่ซ้ำในแมตช์ • ตอบภายใน 15 วินาที</p>
-
+        <p id="lobbyRuleText" class="muted">15 รอบ • สุ่มจาก 400 ข้อ • ไม่วนคำถามล่าสุด</p>
         <div class="players">
-          <div class="player-slot">
-            <div class="avatar">😎</div>
-            <div><b id="p1Name">ผู้เล่น 1</b><small>เจ้าของห้อง</small></div>
-            <span class="online">●</span>
-          </div>
+          <div class="player-slot"><div id="p1Avatar" class="avatar">😎</div><div><b id="p1Name">ผู้เล่น 1</b><small>เจ้าของห้อง</small></div><span class="online">●</span></div>
           <div class="versus">VS</div>
-          <div class="player-slot">
-            <div class="avatar">👤</div>
-            <div><b id="p2Name">รออีกคน...</b><small id="p2Status">ส่งรหัสให้เพื่อน</small></div>
-            <span id="p2Dot" class="waiting-dot">●</span>
-          </div>
+          <div class="player-slot"><div id="p2Avatar" class="avatar">👤</div><div><b id="p2Name">รออีกคน...</b><small id="p2Status">ส่งรหัสให้เพื่อน</small></div><span id="p2Dot" class="waiting-dot">●</span></div>
         </div>
-
-        <div class="lobby-tip">💡 ไม่ต้องตอบคำถามของตัวเอง — เลือกสิ่งที่คิดว่า “อีกคน” จะเลือก</div>
-        <button id="startBtn" class="primary wide" disabled>รออีกคน...</button>
-        <button id="leaveBtn" class="text-btn">ออกจากห้อง</button>
+        <div class="lobby-tip">💡 กติกาเดียว: <b>อย่าเลือกสิ่งที่มึงชอบ</b> — เลือกสิ่งที่คิดว่าอีกคนจะเลือก</div>
+        <button id="startBtn" class="primary wide" disabled>รออีกคน...</button><button id="leaveBtn" class="text-btn">ออกจากห้อง</button>
       </div>
     </section>
 
     <section id="screenGame" class="screen hidden">
-      <div class="game-head">
-        <div class="score-box">
-          <div class="score-name"><span class="mini-avatar">😎</span><span id="myNameScore">คุณ</span></div>
-          <b id="myScore">0</b>
-          <small>🔥 <span id="myStreak">0</span> streak</small>
-        </div>
-
-        <div class="round-box">
-          <span>ROUND</span>
-          <b><span id="roundNum">1</span><i>/</i><span id="totalRoundNum">15</span></b>
-        </div>
-
-        <div class="score-box opponent">
-          <div class="score-name"><span class="mini-avatar">👤</span><span id="opNameScore">อีกคน</span></div>
-          <b id="opScore">0</b>
-          <small>🔥 <span id="opStreak">0</span> streak</small>
-        </div>
+      <div class="game-head sync-head">
+        <div class="person-box"><span id="myAvatarGame" class="mini-avatar">😎</span><div><small>มึง</small><b id="myNameGame">คุณ</b></div><strong><span id="myMatches">0</span><small>/15 ตรง</small></strong></div>
+        <div class="round-box"><span>ROUND</span><b><span id="roundNum">1</span><i>/</i><span id="totalRoundNum">15</span></b><small>🧠 MIND SYNC</small></div>
+        <div class="person-box opponent"><span id="opAvatarGame" class="mini-avatar">👤</span><div><small>อีกคน</small><b id="opNameGame">อีกคน</b></div><strong><span id="opMatches">0</span><small>/15 ตรง</small></strong></div>
       </div>
-
       <div class="card question-card">
-        <div class="question-meta">
-          <span id="questionCategory" class="tag">คำถาม</span>
-          <span class="mode-tag">🧠 เดาใจ</span>
-        </div>
-
-        <div class="timer-wrap">
-          <div class="timer-line"><span>เวลาตอบ</span><strong id="timerText">15</strong></div>
-          <div class="timer-track"><div id="timerBar" class="timer-bar"></div></div>
-        </div>
-
-        <h2 id="questionText">...</h2>
-        <p class="hint">เลือกคำตอบที่มึงคิดว่า <strong>อีกคนจะเลือก</strong> — ห้ามดูคำตอบกัน 👀</p>
-
-        <div id="options" class="options"></div>
-        <div id="waitingAnswer" class="answer-wait hidden">🔒 ล็อกคำตอบแล้ว — รออีกคน...</div>
-        <div id="opponentStatus" class="opponent-status">อีกคนยังไม่ล็อกคำตอบ</div>
+        <div class="question-meta"><span id="questionCategory" class="tag">คำถาม</span><span class="mode-tag">🧠 เดาใจ</span></div>
+        <div class="timer-wrap"><div class="timer-line"><span>เวลาตอบ</span><strong id="timerText">15</strong></div><div class="timer-track"><div id="timerBar" class="timer-bar"></div></div></div>
+        <h2 id="questionText">...</h2><p class="hint">เลือกคำตอบที่มึงคิดว่า <strong>อีกคนจะเลือก</strong> 👀</p>
+        <div id="options" class="options"></div><div id="waitingAnswer" class="answer-wait hidden">🔒 ล็อกคำตอบแล้ว — ห้ามเปลี่ยน รออีกคน...</div><div id="opponentStatus" class="opponent-status">อีกคนยังไม่ล็อกคำตอบ</div>
       </div>
-
-      <div id="resultCard" class="card result-card hidden">
-        <div id="resultEmoji" class="result-emoji">🧠</div>
-        <h2 id="resultTitle">คิดตรงกัน!</h2>
-        <p id="resultText"></p>
-        <div class="answer-reveal">
-          <div><small id="revealMyLabel">คุณ</small><b id="revealMy">—</b></div>
-          <div class="same-mark">VS</div>
-          <div><small id="revealOpLabel">อีกคน</small><b id="revealOp">—</b></div>
-        </div>
-        <div class="round-points" id="roundPoints">+100 คะแนน</div>
-      </div>
+      <div id="resultCard" class="card result-card hidden"><div id="resultEmoji" class="result-emoji">🧠</div><h2 id="resultTitle">คิดตรงกัน!</h2><p id="resultText"></p><div class="answer-reveal"><div><small id="revealMyLabel">คุณ</small><b id="revealMy">—</b></div><div class="same-mark">VS</div><div><small id="revealOpLabel">อีกคน</small><b id="revealOp">—</b></div></div><div class="round-points" id="roundPoints">SYNC +1</div></div>
     </section>
 
     <section id="screenFinish" class="screen hidden">
       <div class="card finish">
-        <div id="finishEmoji" class="finish-emoji">🏆</div>
-        <div class="tag">MATCH COMPLETE</div>
-        <h1 id="finishTitle">ผลการแข่งขัน</h1>
-
-        <div class="final-scores">
-          <div><span id="finalMyName">คุณ</span><strong id="finalMyScore">0</strong><small>คะแนน</small></div>
-          <div class="final-vs">VS</div>
-          <div><span id="finalOpName">อีกคน</span><strong id="finalOpScore">0</strong><small>คะแนน</small></div>
-        </div>
-
-        <div class="stats-grid">
-          <div><span>🎯 Match Rate</span><b id="myMatchRate">0%</b><small id="myNameStat">คุณ</small></div>
-          <div><span>🎯 Match Rate</span><b id="opMatchRate">0%</b><small id="opNameStat">อีกคน</small></div>
-          <div><span>🔥 Best Streak</span><b id="myBestStreak">0</b><small id="myNameStat2">คุณ</small></div>
-          <div><span>🔥 Best Streak</span><b id="opBestStreak">0</b><small id="opNameStat2">อีกคน</small></div>
-        </div>
-
+        <div id="finishEmoji" class="finish-emoji">🧠</div><div class="tag">MIND SYNC COMPLETE</div><h1 id="finishTitle">พวกมึงคิดตรงกันแค่ไหน?</h1>
+        <div class="sync-final"><div><small>ตรงกันทั้งหมด</small><strong id="finalMatches">0/15</strong></div><div><small>Sync Rate</small><strong id="finalRate">0%</strong></div></div>
+        <div class="final-players"><div><span id="finalMyAvatar">😎</span><b id="finalMyName">คุณ</b><small>Best Streak <strong id="myBestStreak">0</strong></small></div><div class="final-vs">🧠</div><div><span id="finalOpAvatar">👤</span><b id="finalOpName">อีกคน</b><small>Best Streak <strong id="opBestStreak">0</strong></small></div></div>
         <p id="finishText"></p>
-        <button id="againBtn" class="primary wide">🔄 เล่นอีกครั้ง — สุ่มคำถามชุดใหม่</button>
-        <button id="homeBtn" class="text-btn">กลับหน้าแรก</button>
+        <button id="againBtn" class="primary wide">🔄 Rematch — สุ่มชุดใหม่</button><div id="rematchStatus" class="rematch-status hidden">⏳ รออีกคนกด Rematch...</div><button id="homeBtn" class="text-btn">กลับหน้าแรก</button>
       </div>
     </section>
-
     <div id="toast" class="toast"></div>
   </main>
-
   <script src="/app.js"></script>
 </body>
 </html>

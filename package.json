@@ -1,6 +1,6 @@
 {
   "name": "brain-same-game",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
   "description": "สมองมึงคิดเหมือนกูไหม? - online 2-player real-time party web game",
   "main": "server.js",
