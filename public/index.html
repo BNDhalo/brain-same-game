@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>สมองมึงคิดเหมือนกูไหม?</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="bg-orb orb1"></div>
+  <div class="bg-orb orb2"></div>
+
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <div class="brand">🧠 สมองมึงคิดเหมือนกูไหม?</div>
+        <div class="subtitle">เกมวัดใจ 2 คน — คิดให้เหมือนเพื่อน แล้วรับคะแนนไป</div>
+      </div>
+      <div id="roomBadge" class="room-badge hidden">ROOM <b id="roomCodeText">----</b></div>
+    </header>
+
+    <section id="screenHome" class="screen">
+      <div class="hero card">
+        <div class="hero-icon">🧠</div>
+        <h1>มึงคิดเหมือนกูไหม?</h1>
+        <p>เลือกคำตอบที่คิดว่า <strong>เพื่อนมึงจะเลือก</strong><br>ยิ่งคิดเหมือนกัน ยิ่งได้คะแนนเยอะ</p>
+
+        <div class="name-row">
+          <input id="nameInput" maxlength="18" placeholder="ชื่อมึง เช่น Flok" />
+        </div>
+
+        <div class="home-actions">
+          <button id="createBtn" class="primary">สร้างห้อง</button>
+          <button id="showJoinBtn" class="secondary">เข้าห้องเพื่อน</button>
+        </div>
+
+        <div id="joinBox" class="join-box hidden">
+          <input id="codeInput" maxlength="4" placeholder="รหัส 4 ตัว" autocomplete="off" />
+          <button id="joinBtn" class="primary">เข้าห้อง</button>
+        </div>
+
+        <div class="howto">
+          <span>👥 2 คน</span><span>🎯 15 รอบ</span><span>⚡ Real-time</span><span>📱 เล่นมือถือได้</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="screenLobby" class="screen hidden">
+      <div class="card lobby">
+        <div class="room-title">ห้องของมึง</div>
+        <div id="bigRoomCode" class="big-code">----</div>
+        <button id="copyBtn" class="copy-btn">📋 คัดลอกรหัส</button>
+        <p class="muted">ส่งรหัสนี้ให้เพื่อน แล้วรอให้เข้าห้อง</p>
+
+        <div class="players">
+          <div class="player-slot">
+            <div class="avatar">😎</div>
+            <div><b id="p1Name">ผู้เล่น 1</b><small>คุณ</small></div>
+            <span class="online">●</span>
+          </div>
+          <div class="versus">VS</div>
+          <div class="player-slot">
+            <div class="avatar">👤</div>
+            <div><b id="p2Name">รอเพื่อน...</b><small id="p2Status">ยังไม่เข้า</small></div>
+            <span id="p2Dot" class="waiting-dot">●</span>
+          </div>
+        </div>
+
+        <button id="startBtn" class="primary wide" disabled>รอเพื่อน...</button>
+        <button id="leaveBtn" class="text-btn">ออกจากห้อง</button>
+      </div>
+    </section>
+
+    <section id="screenGame" class="screen hidden">
+      <div class="game-head">
+        <div class="score-pill"><span id="myNameScore">คุณ</span><b id="myScore">0</b></div>
+        <div class="round"><span>รอบ</span> <b id="roundNum">1</b>/15</div>
+        <div class="score-pill opponent"><span id="opNameScore">เพื่อน</span><b id="opScore">0</b></div>
+      </div>
+
+      <div class="card question-card">
+        <div id="questionTag" class="tag">คำถามที่ตอบพร้อมกัน</div>
+        <h2 id="questionText">...</h2>
+        <p class="hint">เลือกคำตอบที่มึงคิดว่า “เพื่อนจะเลือก”</p>
+        <div id="options" class="options"></div>
+        <div id="waitingAnswer" class="answer-wait hidden">🔒 ล็อกคำตอบแล้ว รอเพื่อน...</div>
+      </div>
+
+      <div id="resultCard" class="card result-card hidden">
+        <div id="resultEmoji" class="result-emoji">🤝</div>
+        <h2 id="resultTitle">คิดเหมือนกัน!</h2>
+        <p id="resultText"></p>
+        <div class="answer-reveal">
+          <div><small id="revealMyLabel">คุณ</small><b id="revealMy">—</b></div>
+          <div class="same-mark">=</div>
+          <div><small id="revealOpLabel">เพื่อน</small><b id="revealOp">—</b></div>
+        </div>
+        <div class="round-points" id="roundPoints">+100 คะแนน!</div>
+      </div>
+    </section>
+
+    <section id="screenFinish" class="screen hidden">
+      <div class="card finish">
+        <div id="finishEmoji" class="finish-emoji">🏆</div>
+        <div class="tag">จบเกม</div>
+        <h1 id="finishTitle">ผลการแข่งขัน</h1>
+        <div class="final-scores">
+          <div><span id="finalMyName">คุณ</span><strong id="finalMyScore">0</strong></div>
+          <div class="final-vs">VS</div>
+          <div><span id="finalOpName">เพื่อน</span><strong id="finalOpScore">0</strong></div>
+        </div>
+        <p id="finishText"></p>
+        <button id="againBtn" class="primary wide">เล่นอีกครั้ง</button>
+        <button id="homeBtn" class="text-btn">กลับหน้าแรก</button>
+      </div>
+    </section>
+
+    <div id="toast" class="toast"></div>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
